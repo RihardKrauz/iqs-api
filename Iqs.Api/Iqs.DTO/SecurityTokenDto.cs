@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Iqs.Api.Models
+﻿
+namespace Iqs.DTO
 {
     public class SecurityTokenDto
     {

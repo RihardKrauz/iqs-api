@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Iqs.Api.Security;
 using Iqs.BL.Contexts;
+using Iqs.BL.Engine;
 using Iqs.BL.Infrastructure;
 using Iqs.BL.Interfaces;
 using Iqs.BL.Repository;
@@ -35,6 +36,7 @@ namespace Iqs.Api
         {
             services.AddDbContext<BaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IQualificationEngine, QualificationEngine>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;

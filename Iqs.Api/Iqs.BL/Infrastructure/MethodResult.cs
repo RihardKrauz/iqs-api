@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Iqs.Api.Infrastructure
+namespace Iqs.BL.Infrastructure
 {
     public class MethodResult<T>
     {
@@ -12,8 +11,10 @@ namespace Iqs.Api.Infrastructure
         public string ExceptionMessage { get; set; }
     }
 
-    public static class MethodResultExtensions {
-        public static MethodResult<T> ToSuccessMethodResult<T>(this T value) {
+    public static class MethodResultExtensions
+    {
+        public static MethodResult<T> ToSuccessMethodResult<T>(this T value)
+        {
             return new MethodResult<T> { IsOk = true, Value = value };
         }
 

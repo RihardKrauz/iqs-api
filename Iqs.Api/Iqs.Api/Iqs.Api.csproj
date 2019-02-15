@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Iqs.BL\Iqs.BL.csproj" />
+    <ProjectReference Include="..\Iqs.DTO\Iqs.DTO.csproj" />
   </ItemGroup>
 
 </Project>

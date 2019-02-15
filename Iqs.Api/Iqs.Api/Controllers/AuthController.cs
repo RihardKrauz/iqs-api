@@ -1,6 +1,7 @@
-﻿using Iqs.Api.Infrastructure;
-using Iqs.Api.Models;
+﻿using Iqs.DTO;
 using Iqs.Api.Security;
+using Iqs.BL.Engine;
+using Iqs.BL.Infrastructure;
 using Iqs.BL.Interfaces;
 using Iqs.BL.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -53,7 +54,7 @@ namespace Iqs.Api.Controllers
             if (user == null) {
                 throw new Exception("User is undefined");
             }
-            user.RefreshToken = Cryptography.GenerateRefreshToken();
+            user.RefreshToken = Cryptography.GenerateHash();
 
             _uow.Users.Update(user.Id, user);
             await _uow.Save();
@@ -88,7 +89,7 @@ namespace Iqs.Api.Controllers
 
                     var response = new SecurityTokenDto
                     {
-                        access_token = Cryptography.GenerateTokenByClaims(identity.Claims),
+                        access_token = TokenGenerator.GenerateTokenByClaims(identity.Claims),
                         username = getUserMethodResult.Value.Login,
                         refresh_token = await SaveRefreshToken(getUserMethodResult.Value)
                     };
@@ -108,7 +109,7 @@ namespace Iqs.Api.Controllers
         {
             try
             {
-                var principalMethodResult = Cryptography.GetPrincipalFromExpiredToken(securityData.access_token);
+                var principalMethodResult = TokenGenerator.GetPrincipalFromExpiredToken(securityData.access_token);
                 if (!principalMethodResult.IsOk || principalMethodResult.Value == null) {
                     return principalMethodResult.ExceptionMessage.ToErrorMethodResult<SecurityTokenDto>();
                 }
@@ -121,7 +122,7 @@ namespace Iqs.Api.Controllers
 
                 var stableClaims = new List<string>() { ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType };
 
-                var newJwtToken = Cryptography.GenerateTokenByClaims(principal.Identities.FirstOrDefault()?.Claims?.Where(c => stableClaims.Contains(c.Type)));
+                var newJwtToken = TokenGenerator.GenerateTokenByClaims(principal.Identities.FirstOrDefault()?.Claims?.Where(c => stableClaims.Contains(c.Type)));
                 var newRefreshToken = await SaveRefreshToken(await _uow.Users.GetByLogin(username));
 
                 var response = new SecurityTokenDto

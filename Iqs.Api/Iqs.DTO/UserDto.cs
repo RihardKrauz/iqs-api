@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Iqs.Api.Models
+﻿
+namespace Iqs.DTO
 {
     public class UserDto
     {
+        public string Login { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
         public int Age { get; set; }

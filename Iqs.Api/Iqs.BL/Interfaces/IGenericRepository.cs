@@ -1,4 +1,5 @@
 ﻿using Iqs.BL.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Iqs.BL.Interfaces
     {
         IQueryable<T> GetAll();
         Task<T> GetById(long Id);
-        Task Create(T entity);
+        Task<T> Create(T entity);
         void Update(long Id, T item);
         Task Delete(long Id);
     }

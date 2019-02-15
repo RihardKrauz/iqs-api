@@ -1,5 +1,5 @@
 ﻿
-namespace Iqs.Api.Models
+namespace Iqs.DTO
 {
     public class AuthDataDto
     {

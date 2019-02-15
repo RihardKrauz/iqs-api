@@ -15,3 +15,5 @@ D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\obj\Debug
 D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\bin\Debug\netcoreapp2.1\Iqs.BL.dll
 D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\bin\Debug\netcoreapp2.1\Iqs.BL.pdb
 D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\obj\Debug\netcoreapp2.1\Iqs.Api.csproj.CopyComplete
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\bin\Debug\netcoreapp2.1\Iqs.DTO.dll
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.Api\bin\Debug\netcoreapp2.1\Iqs.DTO.pdb

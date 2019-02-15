@@ -8,9 +8,9 @@ namespace Iqs.BL.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        UsersRepository Users { get; }
-        GradesRepository Grades { get; }
-        UserGradesRepository UserGrades { get; }
+        IUsersRepository Users { get; }
+        IGradesRepository Grades { get; }
+        IUserGradesRepository UserGrades { get; }
         Task Save();
     }
 }

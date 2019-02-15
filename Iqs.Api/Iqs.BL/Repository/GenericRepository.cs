@@ -2,6 +2,7 @@
 using Iqs.BL.Interfaces;
 using Iqs.BL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,8 +34,9 @@ namespace Iqs.BL.Repository
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Create(T entity) {
-            await _dbContext.Set<T>().AddAsync(entity);
+        public async Task<T> Create(T entity) {
+            var entry = await _dbContext.Set<T>().AddAsync(entity);
+            return entry.Entity;
         }
 
         public void Update(long id, T entity) {

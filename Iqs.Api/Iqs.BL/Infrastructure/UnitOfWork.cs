@@ -11,9 +11,10 @@ namespace Iqs.BL.Infrastructure
     public class UnitOfWork : IUnitOfWork
     {
         private readonly BaseContext _dbContext;
-        private UsersRepository usersRepository;
-        private GradesRepository gradesRepository;
-        private UserGradesRepository userGradesRepository;
+
+        private IUsersRepository usersRepository;
+        private IGradesRepository gradesRepository;
+        private IUserGradesRepository userGradesRepository;
 
         private bool disposed = false;
 
@@ -21,7 +22,7 @@ namespace Iqs.BL.Infrastructure
             _dbContext = dbContext;
         }
 
-        public UsersRepository Users {
+        public IUsersRepository Users {
             get {
                 if (usersRepository == null)
                     usersRepository = new UsersRepository(_dbContext);
@@ -29,7 +30,7 @@ namespace Iqs.BL.Infrastructure
             }
         }
 
-        public GradesRepository Grades
+        public IGradesRepository Grades
         {
             get
             {
@@ -39,7 +40,7 @@ namespace Iqs.BL.Infrastructure
             }
         }
 
-        public UserGradesRepository UserGrades
+        public IUserGradesRepository UserGrades
         {
             get
             {
