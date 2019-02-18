@@ -1,9 +1,9 @@
-﻿using Iqs.BL.Models;
+﻿using Iqs.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Iqs.BL.Interfaces
+namespace Iqs.DAL.Interfaces
 {
     public interface IGradesRepository : IGenericRepository<Grade>
     {

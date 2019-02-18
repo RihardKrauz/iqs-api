@@ -1,15 +1,14 @@
-﻿using Iqs.BL.Contexts;
-using Iqs.BL.Interfaces;
-using Iqs.BL.Models;
+﻿using Iqs.DAL.Contexts;
+using Iqs.DAL.Interfaces;
+using Iqs.DAL.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Iqs.BL.Repository
+namespace Iqs.DAL.Repository
 {
     public class GenericRepository<T>: IGenericRepository<T> where T :  class, IEntity
     {

@@ -1,12 +1,12 @@
-﻿using Iqs.BL.Contexts;
-using Iqs.BL.Interfaces;
-using Iqs.BL.Repository;
+﻿using Iqs.DAL.Contexts;
+using Iqs.DAL.Interfaces;
+using Iqs.DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Iqs.BL.Infrastructure
+namespace Iqs.DAL.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {

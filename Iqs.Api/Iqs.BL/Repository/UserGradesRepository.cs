@@ -1,11 +1,11 @@
-﻿using Iqs.BL.Contexts;
-using Iqs.BL.Interfaces;
-using Iqs.BL.Models;
+﻿using Iqs.DAL.Contexts;
+using Iqs.DAL.Interfaces;
+using Iqs.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Iqs.BL.Repository
+namespace Iqs.DAL.Repository
 {
     public class UserGradesRepository : GenericRepository<UserGrade>, IUserGradesRepository
     {

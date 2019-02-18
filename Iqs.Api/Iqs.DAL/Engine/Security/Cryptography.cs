@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Iqs.BL.Engine
+namespace Iqs.BL.Engine.Security
 {
     public class Cryptography
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Iqs.Api.Security
+namespace Iqs.BL.Engine.Security
 {
     public class AuthOptions
     {

@@ -1,0 +1,14 @@
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.DAL.dll
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.DTO.dll
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.DTO.pdb
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.csprojAssemblyReference.cache
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.csproj.CoreCompileInputs.cache
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.AssemblyInfoInputs.cache
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.AssemblyInfo.cs
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.BL.deps.json
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.BL.dll
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.BL.pdb
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\bin\Debug\netcoreapp2.1\Iqs.DAL.pdb
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.csproj.CopyComplete
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.dll
+D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DAL\obj\Debug\netcoreapp2.1\Iqs.BL.pdb

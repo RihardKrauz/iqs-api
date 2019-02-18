@@ -1,14 +1,14 @@
-﻿using Iqs.BL.Models;
+﻿using Iqs.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Iqs.BL.Interfaces;
-using Iqs.BL.Contexts;
+using Iqs.DAL.Interfaces;
+using Iqs.DAL.Contexts;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Iqs.BL.Repository
+namespace Iqs.DAL.Repository
 {
     public class UsersRepository : GenericRepository<User>, IUsersRepository
     {

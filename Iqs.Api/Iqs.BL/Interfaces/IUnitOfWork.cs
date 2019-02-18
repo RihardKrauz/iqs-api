@@ -1,10 +1,10 @@
-﻿using Iqs.BL.Repository;
+﻿using Iqs.DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Iqs.BL.Interfaces
+namespace Iqs.DAL.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

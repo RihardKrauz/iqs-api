@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Iqs.BL.Infrastructure;
 
-namespace Iqs.Api.Security
+namespace Iqs.BL.Engine.Security
 {
     public static class TokenGenerator
     {

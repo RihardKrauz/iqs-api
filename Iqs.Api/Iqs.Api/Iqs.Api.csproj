@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Iqs.BL\Iqs.BL.csproj" />
+    <ProjectReference Include="..\Iqs.DAL\Iqs.BL.csproj" />
     <ProjectReference Include="..\Iqs.DTO\Iqs.DTO.csproj" />
   </ItemGroup>
 

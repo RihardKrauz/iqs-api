@@ -1,10 +1,10 @@
-﻿using Iqs.BL.Models;
+﻿using Iqs.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Iqs.BL.Contexts
+namespace Iqs.DAL.Contexts
 {
     public class BaseContext : DbContext
     {

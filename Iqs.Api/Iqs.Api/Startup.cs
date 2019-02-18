@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Iqs.Api.Security;
-using Iqs.BL.Contexts;
 using Iqs.BL.Engine;
 using Iqs.BL.Infrastructure;
 using Iqs.BL.Interfaces;
-using Iqs.BL.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -18,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Iqs.BL.Engine.Security;
+using Microsoft.IdentityModel;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Iqs.Api
@@ -34,9 +33,10 @@ namespace Iqs.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IQualificationEngine, QualificationEngine>();
+            // services.AddDbContext<BaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.RegisterDataServices(Configuration.GetConnectionString("DefaultConnection"));
+            // services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUsersEngine, UsersEngine>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;
@@ -54,7 +54,7 @@ namespace Iqs.Api
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        if (context.Exception.GetType() == typeof(Microsoft.IdentityModel.Tokens.SecurityTokenValidationException))
                         {
                             context.Response.Headers.Add("Token-Expired", "true");
                         }

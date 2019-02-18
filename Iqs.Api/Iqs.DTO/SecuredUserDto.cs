@@ -1,7 +1,7 @@
 ﻿
 namespace Iqs.DTO
 {
-    public class UserDto
+    public class SecuredUserDto
     {
         public string Login { get; set; }
         public string Name { get; set; }

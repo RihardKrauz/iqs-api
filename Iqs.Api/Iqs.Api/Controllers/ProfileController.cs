@@ -15,22 +15,22 @@ namespace Iqs.Api.Controllers
     [ApiController]
     public class ProfileController : ControllerBase
     {
-        private readonly IQualificationEngine _qualificationEngine;
+        private readonly IUsersEngine _usersEngine;
 
-        public ProfileController(IQualificationEngine qualificationEngine) {
-            _qualificationEngine = qualificationEngine;
+        public ProfileController(IUsersEngine usersEngine) {
+            _usersEngine = usersEngine;
         }
 
         [HttpGet("/user/{login}")]
         [Authorize]
-        public async Task<MethodResult<UserDto>> GetUserData(string login) {
-            return await _qualificationEngine.GetUserByLogin(login);
+        public async Task<MethodResult<SecuredUserDto>> GetUserData(string login) {
+            return await _usersEngine.GetUserByLogin(login);
         }
 
         [HttpPost("/user")]
-        public Task<MethodResult<UserDto>> CreateUser(UserGeneratorDto userGenerator)
+        public Task<MethodResult<SecuredUserDto>> CreateUser(UserAuthDto userGenerator)
         {
-            return _qualificationEngine.CreateNewUser(userGenerator.User, userGenerator.Password);
+            return _usersEngine.CreateNewUser(userGenerator.User, userGenerator.Password);
         }
     }
 }

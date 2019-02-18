@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Iqs.BL.Models
+namespace Iqs.DAL.Models
 {
     public class User : IEntity
     {
