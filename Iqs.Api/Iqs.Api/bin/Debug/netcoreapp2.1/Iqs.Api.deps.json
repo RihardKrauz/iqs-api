@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "80df6d1d67c4903ab03b44030d979230534da203"
+    "signature": "20808e98e4453a00c38e008079a89cead739bc15"
   },
   "compilationOptions": {
     "defines": [
@@ -87,17 +87,6 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
-        }
-      },
-      "Microsoft.IdentityModel/6.1.7600.16394": {
-        "runtime": {
-          "lib/net35/Microsoft.IdentityModel.dll": {
-            "assemblyVersion": "3.5.0.0",
-            "fileVersion": "6.1.7600.16394"
-          }
-        },
-        "compile": {
-          "lib/net35/Microsoft.IdentityModel.dll": {}
         }
       },
       "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
@@ -725,7 +714,6 @@
         "dependencies": {
           "Iqs.DAL": "1.0.0",
           "Iqs.DTO": "1.0.0",
-          "Microsoft.IdentityModel": "6.1.7600.16394",
           "Microsoft.IdentityModel.Tokens": "5.4.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
@@ -3586,13 +3574,6 @@
       "sha512": "sha512-AqCiNju6UZy9Sd8HKzxGbpbZf+P8gWpojfvs9hIRfwstqFMZ6OJXf69EUvqJ5C4rWrcf08F7G8WII74KBEFImQ==",
       "path": "microsoft.codeanalysis.workspaces.common/2.8.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512"
-    },
-    "Microsoft.IdentityModel/6.1.7600.16394": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qsst2HALUxXdDVmOEk6GJ8U7LNbrQIpIiPesdD+k99TuRc5zy+J4zK4fNpiX+hiMd4cCGoY9WIT3f021Syocdw==",
-      "path": "microsoft.identitymodel/6.1.7600.16394",
-      "hashPath": "microsoft.identitymodel.6.1.7600.16394.nupkg.sha512"
     },
     "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
       "type": "package",

@@ -10,13 +10,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Iqs.BL.Engine.Security;
-using Microsoft.IdentityModel;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Iqs.Api
@@ -54,7 +52,7 @@ namespace Iqs.Api
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        if (context.Exception.GetType() == typeof(Microsoft.IdentityModel.Tokens.SecurityTokenValidationException))
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
                         {
                             context.Response.Headers.Add("Token-Expired", "true");
                         }

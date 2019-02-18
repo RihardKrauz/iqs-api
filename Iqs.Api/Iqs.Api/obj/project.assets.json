@@ -2300,15 +2300,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
-      "Microsoft.IdentityModel/6.1.7600.16394": {
-        "type": "package",
-        "compile": {
-          "lib/net35/Microsoft.IdentityModel.dll": {}
-        },
-        "runtime": {
-          "lib/net35/Microsoft.IdentityModel.dll": {}
-        }
-      },
       "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
         "type": "package",
         "dependencies": {
@@ -4656,7 +4647,6 @@
         "dependencies": {
           "Iqs.DAL": "1.0.0",
           "Iqs.DTO": "1.0.0",
-          "Microsoft.IdentityModel": "6.1.7600.16394",
           "Microsoft.IdentityModel.Tokens": "5.4.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
@@ -6836,18 +6826,6 @@
         "lib/netstandard2.0/Microsoft.Extensions.WebEncoders.xml",
         "microsoft.extensions.webencoders.2.1.1.nupkg.sha512",
         "microsoft.extensions.webencoders.nuspec"
-      ]
-    },
-    "Microsoft.IdentityModel/6.1.7600.16394": {
-      "sha512": "qsst2HALUxXdDVmOEk6GJ8U7LNbrQIpIiPesdD+k99TuRc5zy+J4zK4fNpiX+hiMd4cCGoY9WIT3f021Syocdw==",
-      "type": "package",
-      "path": "microsoft.identitymodel/6.1.7600.16394",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net35/Microsoft.IdentityModel.dll",
-        "microsoft.identitymodel.6.1.7600.16394.nupkg.sha512",
-        "microsoft.identitymodel.nuspec"
       ]
     },
     "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
@@ -12784,17 +12762,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Пакет \"Microsoft.IdentityModel 6.1.7600.16394\" был восстановлен с помощью \".NETFramework,Version=v4.6.1\", а не целевой платформы проекта \".NETCoreApp,Version=v2.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
-      "libraryId": "Microsoft.IdentityModel",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }
