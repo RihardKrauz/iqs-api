@@ -8,6 +8,7 @@ using Iqs.BL.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Iqs.Api.Controllers
 {
@@ -23,8 +24,8 @@ namespace Iqs.Api.Controllers
 
         [HttpGet("/user/{login}")]
         [Authorize]
-        public async Task<MethodResult<SecuredUserDto>> GetUserData(string login) {
-            return await _usersEngine.GetUserByLogin(login);
+        public Task<MethodResult<SecuredUserDto>> GetUserData(string login) {
+            return _usersEngine.GetUserByLogin(login);
         }
 
         [HttpPost("/user")]

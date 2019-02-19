@@ -28,6 +28,10 @@ namespace Iqs.BL.Infrastructure
             return new MethodResult<T> { IsOk = false, ExceptionMessage = errorMsg };
         }
 
+        public static MethodResult<T> ToErrorMethodResult<T>(this Exception ex) {
+            return new MethodResult<T> { IsOk = false, ExceptionMessage = ex.ToString() };
+        }
+
         public static MethodResult<TDestination> GetExceptionResult<TDestination, TSource>(this MethodResult<TSource> source) {
             return source.ExceptionMessage.ToErrorMethodResult<TDestination>();
         }

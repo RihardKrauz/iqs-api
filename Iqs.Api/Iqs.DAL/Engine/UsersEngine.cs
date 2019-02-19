@@ -81,7 +81,7 @@ namespace Iqs.BL.Engine
             }
             catch (Exception ex)
             {
-                return ex.ToString().ToErrorMethodResult<User>();
+                return ex.ToErrorMethodResult<User>();
             }
         }
 
@@ -110,7 +110,7 @@ namespace Iqs.BL.Engine
                 return $"Mapping error on 'User' object: {ex}".ToErrorMethodResult<SecuredUserDto>();
             }
             catch (Exception ex) {
-                return ex.ToString().ToErrorMethodResult<SecuredUserDto>();
+                return ex.ToErrorMethodResult<SecuredUserDto>();
             }
         }
 
@@ -126,7 +126,7 @@ namespace Iqs.BL.Engine
             }
             catch (Exception ex)
             {
-                return ex.ToString().ToErrorMethodResult<SecuredUserDto>();
+                return ex.ToErrorMethodResult<SecuredUserDto>();
             }
         }
 
@@ -154,7 +154,7 @@ namespace Iqs.BL.Engine
                 return generatedSecurityData.ToSuccessMethodResult();
             }
             catch (Exception ex) {
-                return ex.ToString().ToErrorMethodResult<SecurityTokenDto>();
+                return ex.ToErrorMethodResult<SecurityTokenDto>();
             }
         }
 
@@ -195,7 +195,7 @@ namespace Iqs.BL.Engine
             }
             catch (Exception ex)
             {
-                return ex.Message.ToErrorMethodResult<SecurityTokenDto>();
+                return ex.ToErrorMethodResult<SecurityTokenDto>();
             }
         }
 
