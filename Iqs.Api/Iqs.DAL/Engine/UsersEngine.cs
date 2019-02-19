@@ -86,10 +86,14 @@ namespace Iqs.BL.Engine
         }
 
         public async Task<MethodResult<SecuredUserDto>> CreateNewUser(SecuredUserDto userDto, string password) {
-            User user;
             try
             {
-                user = Mapper.Map<User>(userDto);
+                var getExistingUserResult = await GetUserByLogin(userDto.Login);
+                if (getExistingUserResult.Value != null) {
+                    return $"User with login '{userDto.Login}' already exists".ToErrorMethodResult<SecuredUserDto>();
+                }
+
+                User user = Mapper.Map<User>(userDto);
 
                 user.Role = "user";
                 user.Salt = Cryptography.GenerateHash();
