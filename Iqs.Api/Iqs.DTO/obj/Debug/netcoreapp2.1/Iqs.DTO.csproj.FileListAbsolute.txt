@@ -1,9 +1,0 @@
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\bin\Debug\netcoreapp2.1\Iqs.DTO.deps.json
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\bin\Debug\netcoreapp2.1\Iqs.DTO.dll
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\bin\Debug\netcoreapp2.1\Iqs.DTO.pdb
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.csprojAssemblyReference.cache
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.csproj.CoreCompileInputs.cache
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.AssemblyInfoInputs.cache
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.AssemblyInfo.cs
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.dll
-D:\Repository\itransition-qualification-system\iqs-api\Iqs.Api\Iqs.DTO\obj\Debug\netcoreapp2.1\Iqs.DTO.pdb
