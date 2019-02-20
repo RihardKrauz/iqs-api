@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Iqs.DAL.Models
@@ -20,6 +21,8 @@ namespace Iqs.DAL.Models
         public string PassHash { get; set; }
         public string Salt { get; set; }
         public string RefreshToken { get; set; }
+        [ForeignKey("Department")]
         public long DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }

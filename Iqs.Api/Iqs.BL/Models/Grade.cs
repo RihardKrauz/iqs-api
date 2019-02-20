@@ -11,7 +11,7 @@ namespace Iqs.DAL.Models
         public long Id { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
-        [StringLength(150)]
+        [StringLength(500)]
         public string Description { get; set; }
     }
 }

@@ -9,8 +9,10 @@ namespace Iqs.DAL.Interfaces
 {
     public interface IGenericRepository<T> where T : class, IEntity 
     {
+        void Attach(T entity);
         IQueryable<T> GetAll();
         Task<T> GetById(long Id);
+        Task<T> GetAny();
         Task<T> Create(T entity);
         void Update(long Id, T item);
         Task Delete(long Id);

@@ -23,6 +23,12 @@ namespace Iqs.BL.Engine
             Mapper.Initialize(cfg => {
                 cfg.CreateMap<SecuredUserDto, User>();
                 cfg.CreateMap<User, SecuredUserDto>();
+                cfg.CreateMap<EmployeeDto, User>();
+                cfg.CreateMap<User, EmployeeDto>();
+                cfg.CreateMap<GradeDto, Grade>();
+                cfg.CreateMap<Grade, GradeDto>();
+                cfg.CreateMap<DepartmentDto, Department>();
+                cfg.CreateMap<Department, DepartmentDto>();
             });
         }
 
@@ -93,8 +99,12 @@ namespace Iqs.BL.Engine
                     return $"User with login '{userDto.Login}' already exists".ToErrorMethodResult<SecuredUserDto>();
                 }
 
-                User user = Mapper.Map<User>(userDto);
+                var user = Mapper.Map<User>(userDto);
+                var dep = await _uow.Departments.GetAny();
 
+                _uow.Departments.Attach(dep);
+
+                user.Department = dep;
                 user.Role = "user";
                 user.Salt = Cryptography.GenerateHash();
                 user.RefreshToken = Cryptography.GenerateHash();
@@ -114,7 +124,31 @@ namespace Iqs.BL.Engine
             }
         }
 
-        public async Task<MethodResult<SecuredUserDto>> GetUserByLogin(string login) {
+        public async Task<MethodResult<EmployeeDto>> GetEmployeeDataByLogin(string login) {
+            try
+            {
+                var user = await _uow.Users.GetByLogin(login);
+
+                var grade = await _uow.UserGrades.GetCurrentGradeForUser(user);
+
+                var result = Mapper.Map<EmployeeDto>(user);
+                result.Grade = Mapper.Map<GradeDto>(grade);
+                result.Department = Mapper.Map<DepartmentDto>(user.Department);
+
+                return result.ToSuccessMethodResult();
+            }
+            catch (AutoMapperMappingException ex)
+            {
+                return $"Mapping error: {ex}".ToErrorMethodResult<EmployeeDto>();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToErrorMethodResult<EmployeeDto>();
+            }
+        }
+
+        public async Task<MethodResult<SecuredUserDto>> GetUserByLogin(string login)
+        {
             try
             {
                 var user = await _uow.Users.GetByLogin(login);

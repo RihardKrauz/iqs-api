@@ -27,10 +27,21 @@ namespace Iqs.DAL.Repository
             return _dbContext.Set<T>().AsNoTracking().Where(predicate).AsQueryable();
         }
 
+        public async Task<T> GetAny() {
+            return await _dbContext.Set<T>()
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<T> GetById(long id) {
             return await _dbContext.Set<T>()
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Id == id);
+        }
+
+        public void Attach(T entity) {
+            _dbContext.Set<T>().Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Unchanged;
         }
 
         public async Task<T> Create(T entity) {

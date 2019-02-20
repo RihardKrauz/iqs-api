@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Iqs.DAL.Models
+namespace Iqs.DTO
 {
-    public class Department : IEntity
+    public class DepartmentDto
     {
-        [Key]
         public long Id { get; set; }
-        [StringLength(50)]
         public string Name { get; set; }
     }
 }

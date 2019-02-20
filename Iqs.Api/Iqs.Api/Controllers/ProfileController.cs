@@ -24,8 +24,8 @@ namespace Iqs.Api.Controllers
 
         [HttpGet("/user/{login}")]
         [Authorize]
-        public Task<MethodResult<SecuredUserDto>> GetUserData(string login) {
-            return _usersEngine.GetUserByLogin(login);
+        public Task<MethodResult<EmployeeDto>> GetEmployeeData(string login) {
+            return _usersEngine.GetEmployeeDataByLogin(login);
         }
 
         [HttpPost("/user")]

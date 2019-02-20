@@ -20,6 +20,7 @@ namespace Iqs.DAL.Repository
         public async Task<User> GetByLogin(string login)
         {
             return await _dbContext.Set<User>()
+                .Include("Department")
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Login == login);
         }
