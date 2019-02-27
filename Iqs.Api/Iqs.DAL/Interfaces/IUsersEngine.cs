@@ -11,6 +11,7 @@ namespace Iqs.BL.Interfaces
     {
         Task<MethodResult<SecuredUserDto>> CreateNewUser(SecuredUserDto userDto, string password);
         Task<MethodResult<EmployeeDto>> GetEmployeeDataByLogin(string login);
+        Task<MethodResult<SecuredUserDto>> GetUserByLogin(string login);
         Task<MethodResult<SecurityTokenDto>> AuthenticateUserAndGetSecurityToken(string login, string pass);
         Task<MethodResult<SecurityTokenDto>> RefreshTokenBySecurityData(SecurityTokenDto securityData);
     }

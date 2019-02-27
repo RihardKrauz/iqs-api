@@ -33,5 +33,11 @@ namespace Iqs.Api.Controllers
         {
             return _usersEngine.CreateNewUser(userGenerator.User, userGenerator.Password);
         }
+
+        [HttpGet("/login/{login}")]
+        public async Task<bool> IsLoginTaken(string login) {
+            var result = await _usersEngine.GetUserByLogin(login);
+            return result.Value != null;
+        }
     }
 }

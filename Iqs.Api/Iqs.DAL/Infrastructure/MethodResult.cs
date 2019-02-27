@@ -35,5 +35,11 @@ namespace Iqs.BL.Infrastructure
         public static MethodResult<TDestination> GetExceptionResult<TDestination, TSource>(this MethodResult<TSource> source) {
             return source.ExceptionMessage.ToErrorMethodResult<TDestination>();
         }
+
+        public static MethodResult<TDestination> ConvertMethodResult<TDestination, TSource>(this MethodResult<TSource> source, TDestination value)
+        {
+            return new MethodResult<TDestination> { Value = value, IsOk = source.IsOk, ExceptionMessage = source.ExceptionMessage };
+        }
+
     }
 }
