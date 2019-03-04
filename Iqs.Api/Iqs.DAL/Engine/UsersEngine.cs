@@ -18,18 +18,6 @@ namespace Iqs.BL.Engine
         private readonly IUnitOfWork _uow;
         public UsersEngine(IUnitOfWork uow) {
             _uow = uow;
-
-            Mapper.Reset();
-            Mapper.Initialize(cfg => {
-                cfg.CreateMap<SecuredUserDto, User>();
-                cfg.CreateMap<User, SecuredUserDto>();
-                cfg.CreateMap<EmployeeDto, User>();
-                cfg.CreateMap<User, EmployeeDto>();
-                cfg.CreateMap<GradeDto, Grade>();
-                cfg.CreateMap<Grade, GradeDto>();
-                cfg.CreateMap<DepartmentDto, Department>();
-                cfg.CreateMap<Department, DepartmentDto>();
-            });
         }
 
         public ClaimsIdentity GetIdentityForUser(User user)
@@ -101,10 +89,13 @@ namespace Iqs.BL.Engine
 
                 var user = Mapper.Map<User>(userDto);
                 var dep = await _uow.Departments.GetAny();
+                var spec = await _uow.Specializations.GetAny();
 
                 _uow.Departments.Attach(dep);
+                _uow.Specializations.Attach(spec);
 
                 user.Department = dep;
+                user.Specialization = spec;
                 user.Role = "user";
                 user.Salt = Cryptography.GenerateHash();
                 user.RefreshToken = Cryptography.GenerateHash();

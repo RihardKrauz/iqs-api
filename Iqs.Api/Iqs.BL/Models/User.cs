@@ -24,5 +24,8 @@ namespace Iqs.DAL.Models
         [ForeignKey("Department")]
         public long DepartmentId { get; set; }
         public Department Department { get; set; }
+        [ForeignKey("Specialization")]
+        public long SpecializationId { get; set; }
+        public Specialization Specialization { get; set; }
     }
 }

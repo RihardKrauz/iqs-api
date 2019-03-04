@@ -16,6 +16,7 @@ namespace Iqs.DAL.Infrastructure
         private IGradesRepository gradesRepository;
         private IUserGradesRepository userGradesRepository;
         private IDepartmentsRepository departmentsRepository;
+        private ISpecializationsRepository specializationsRepository;
 
         private bool disposed = false;
 
@@ -58,6 +59,16 @@ namespace Iqs.DAL.Infrastructure
                 if (userGradesRepository == null)
                     userGradesRepository = new UserGradesRepository(_dbContext);
                 return userGradesRepository;
+            }
+        }
+
+        public ISpecializationsRepository Specializations
+        {
+            get
+            {
+                if (specializationsRepository == null)
+                    specializationsRepository = new SpecializationsRepository(_dbContext);
+                return specializationsRepository;
             }
         }
 

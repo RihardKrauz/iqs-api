@@ -21,6 +21,7 @@ namespace Iqs.DAL.Repository
         {
             return await _dbContext.Set<User>()
                 .Include("Department")
+                .Include("Specialization")
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Login == login);
         }

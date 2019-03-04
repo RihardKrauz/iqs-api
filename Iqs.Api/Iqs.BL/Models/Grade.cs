@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Iqs.DAL.Models
@@ -13,5 +14,8 @@ namespace Iqs.DAL.Models
         public string Name { get; set; }
         [StringLength(500)]
         public string Description { get; set; }
+        [ForeignKey("Specialization")]
+        public long SpecializationId { get; set; }
+        public Specialization Specialization { get; set; }
     }
 }

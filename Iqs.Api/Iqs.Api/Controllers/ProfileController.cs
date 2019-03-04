@@ -39,5 +39,6 @@ namespace Iqs.Api.Controllers
             var result = await _usersEngine.GetUserByLogin(login);
             return result.Value != null;
         }
+
     }
 }

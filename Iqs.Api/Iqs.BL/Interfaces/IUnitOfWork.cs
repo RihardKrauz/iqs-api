@@ -12,6 +12,7 @@ namespace Iqs.DAL.Interfaces
         IGradesRepository Grades { get; }
         IUserGradesRepository UserGrades { get; }
         IDepartmentsRepository Departments { get; }
+        ISpecializationsRepository Specializations { get; }
         Task Save();
     }
 }

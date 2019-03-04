@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Iqs.BL.Engine;
-using Iqs.BL.Infrastructure;
 using Iqs.BL.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Iqs.BL.Engine.Security;
 using Microsoft.IdentityModel.Tokens;
+using Iqs.BL.Infrastructure;
 
 namespace Iqs.Api
 {
@@ -32,7 +32,10 @@ namespace Iqs.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterDataServices(Configuration.GetConnectionString("DefaultConnection"));
+            services.RegisterMapperConfiguration();
+
             services.AddScoped<IUsersEngine, UsersEngine>();
+            services.AddScoped<IGradesEngine, GradesEngine>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;
