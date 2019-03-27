@@ -34,6 +34,8 @@ namespace Iqs.BL.Infrastructure
                 cfg.CreateMap<Grade, GradeDto>();
                 cfg.CreateMap<DepartmentDto, Department>();
                 cfg.CreateMap<Department, DepartmentDto>();
+                cfg.CreateMap<SpecializationDto, Specialization>();
+                cfg.CreateMap<Specialization, SpecializationDto>();
                 cfg.CreateMap<List<Grade>, List<GradeDto>>();
                 cfg.CreateMap<List<GradeDto>, List<Grade>>();
             });

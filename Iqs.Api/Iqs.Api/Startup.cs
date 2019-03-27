@@ -36,6 +36,8 @@ namespace Iqs.Api
 
             services.AddScoped<IUsersEngine, UsersEngine>();
             services.AddScoped<IGradesEngine, GradesEngine>();
+            services.AddScoped<IDictionariesEngine, DictionariesEngine>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;

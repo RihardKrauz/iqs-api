@@ -22,19 +22,19 @@ namespace Iqs.Api.Controllers
             _usersEngine = usersEngine;
         }
 
-        [HttpGet("/user/{login}")]
+        [HttpGet("/users/{login}")]
         [Authorize]
         public Task<MethodResult<EmployeeDto>> GetEmployeeData(string login) {
             return _usersEngine.GetEmployeeDataByLogin(login);
         }
 
-        [HttpPost("/user")]
+        [HttpPost("/users")]
         public Task<MethodResult<SecuredUserDto>> CreateUser(UserAuthDto userGenerator)
         {
             return _usersEngine.CreateNewUser(userGenerator.User, userGenerator.Password);
         }
 
-        [HttpGet("/login/{login}")]
+        [HttpGet("/users/{login}/exists")]
         public async Task<bool> IsLoginTaken(string login) {
             var result = await _usersEngine.GetUserByLogin(login);
             return result.Value != null;

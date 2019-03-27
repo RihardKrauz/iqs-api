@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "login/1",
+      "launchUrl": "users/1/exists",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "Iqs.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "login/1",
+      "launchUrl": "users/1/exists",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

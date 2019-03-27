@@ -24,7 +24,7 @@ namespace Iqs.Api.Controllers
             _gradesEngine = gradesEngine;
         }
 
-        [HttpGet("/specialization/{specId}/grades")]
+        [HttpGet("/specializations/{specId}/grades")]
         public MethodResult<List<GradeDto>> GetGradesBySpecialization(long specId)
         {
             return _gradesEngine.GetGradesBySpecialization(specId);
