@@ -14,12 +14,12 @@ namespace Iqs.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class GradeController : ControllerBase
+    public class GradesController : ControllerBase
     {
 
         private readonly IGradesEngine _gradesEngine;
 
-        public GradeController(IGradesEngine gradesEngine)
+        public GradesController(IGradesEngine gradesEngine)
         {
             _gradesEngine = gradesEngine;
         }

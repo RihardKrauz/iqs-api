@@ -88,8 +88,8 @@ namespace Iqs.BL.Engine
                 }
 
                 var user = Mapper.Map<User>(userDto);
-                var dep = await _uow.Departments.GetAny();
-                var spec = await _uow.Specializations.GetAny();
+                var dep = await _uow.Departments.GetById(userDto.DepartmentId);
+                var spec = await _uow.Specializations.GetById(userDto.SpecializationId);
 
                 _uow.Departments.Attach(dep);
                 _uow.Specializations.Attach(spec);

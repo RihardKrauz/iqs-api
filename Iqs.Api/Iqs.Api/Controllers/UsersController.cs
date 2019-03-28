@@ -14,11 +14,11 @@ namespace Iqs.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProfileController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IUsersEngine _usersEngine;
 
-        public ProfileController(IUsersEngine usersEngine) {
+        public UsersController(IUsersEngine usersEngine) {
             _usersEngine = usersEngine;
         }
 
