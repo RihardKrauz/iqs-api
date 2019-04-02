@@ -7,6 +7,7 @@ namespace Iqs.DTO
     {
         [Required]
         [StringLength(50)]
+        [RegularExpression(@"\S+")]
         public string Login { get; set; }
         [Required]
         [StringLength(150, MinimumLength=5)]

@@ -25,7 +25,7 @@ namespace Iqs.BL.Engine
         {
             try
             {
-                return Mapper.Map<List<TEntityDto>>(selector().ToList()).ToSuccessMethodResult();
+                return Mapper.Map<List<TEntity>, List<TEntityDto>>(selector().ToList()).ToSuccessMethodResult();
             }
             catch (AutoMapperMappingException ex)
             {

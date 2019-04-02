@@ -18,7 +18,7 @@ namespace Iqs.DAL.Repository
             return await (from ug in _dbContext.Set<UserGrade>().AsNoTracking()
                  join g in _dbContext.Set<Grade>().AsNoTracking() on ug.GradeId equals g.Id
                  where ug.UserId == user.Id
-                 orderby ug.QualifiedDate
+                 orderby ug.QualifiedDate descending
                  select g).FirstOrDefaultAsync();
         }
 
@@ -28,6 +28,14 @@ namespace Iqs.DAL.Repository
                           join g in _dbContext.Set<Grade>().AsNoTracking() on ug.GradeId equals g.Id
                           where ug.UserId == user.Id
                           select g).AsEnumerable();
+        }
+
+        public IQueryable<UserGrade> GetUserGradesForUser(User user)
+        {
+            return _dbContext.Set<UserGrade>()
+                .Include("Grade")
+                .AsNoTracking()
+                .Where(u => u.UserId == user.Id);
         }
     }
 }

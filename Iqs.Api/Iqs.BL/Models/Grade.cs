@@ -17,5 +17,8 @@ namespace Iqs.DAL.Models
         [ForeignKey("Specialization")]
         public long SpecializationId { get; set; }
         public Specialization Specialization { get; set; }
+        [ForeignKey("ParentGrade")]
+        public long? ParentGradeId { get; set; }
+        public Grade ParentGrade { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using Iqs.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,11 +15,12 @@ namespace Iqs.DAL.Repository
         private readonly BaseContext _dbContext;
         public GradesRepository(BaseContext dbContext) : base(dbContext) { _dbContext = dbContext; }
 
-        public async Task<Specialization> GetBySpecializationId(long specId)
+        public IQueryable<Grade> GetBySpecializationId(long specId)
         {
-            return await _dbContext.Set<Specialization>()
+            return _dbContext.Set<Grade>()
                 .AsNoTracking()
-                .FirstOrDefaultAsync(e => e.Id == specId);
+                .Where(e => e.SpecializationId == specId)
+                .AsQueryable();
         }
     }
 }

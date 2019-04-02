@@ -120,11 +120,10 @@ namespace Iqs.BL.Engine
             {
                 var user = await _uow.Users.GetByLogin(login);
 
-                var grade = await _uow.UserGrades.GetCurrentGradeForUser(user);
+                var grades = _uow.UserGrades.GetUserGradesForUser(user).ToList();
 
                 var result = Mapper.Map<EmployeeDto>(user);
-                result.Grade = Mapper.Map<GradeDto>(grade);
-                result.Department = Mapper.Map<DepartmentDto>(user.Department);
+                result.Qualification = Mapper.Map<List<UserGradeDto>>(grades);
 
                 return result.ToSuccessMethodResult();
             }
